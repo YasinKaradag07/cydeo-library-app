@@ -13,4 +13,7 @@ public class DashboardPage extends BasePage{
 
     @FindBy(xpath = "//span[.='Users']")
     public WebElement usersButton;
+
+    @FindBy(xpath = "//a[@id='navbarDropdown']/span")
+    public WebElement accountHolderName;
 }

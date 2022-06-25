@@ -1,5 +1,5 @@
-@wip
-  Feature: Librarian should be able to see columns
+
+Feature: Librarian should be able to see columns
 
     Scenario: Table columns names
       Given I am on the login page

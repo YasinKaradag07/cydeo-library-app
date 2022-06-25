@@ -114,6 +114,9 @@ public class Login_StepDef {
     }
 
 
-
-
+    @Then("account holder name should be {string}")
+    public void accountHolderNameShouldBe(String name) {
+        BrowserUtils.waitForVisibility(dashboardPage.accountHolderName,5);
+        Assert.assertEquals(name,dashboardPage.accountHolderName.getText());
+    }
 }
