@@ -3,6 +3,7 @@ package com.cydeo.library.step_definitions;
 
 import com.cydeo.library.pages.DashboardPage;
 import com.cydeo.library.pages.LoginPage;
+import com.cydeo.library.pages.UsersPage;
 import com.cydeo.library.utilities.BrowserUtils;
 import com.cydeo.library.utilities.ConfigurationReader;
 import com.cydeo.library.utilities.Driver;
@@ -13,11 +14,14 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class Login_StepDef {
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
     LoginPage loginPage = new LoginPage();
     DashboardPage dashboardPage = new DashboardPage();
+    UsersPage usersPage = new UsersPage();
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
@@ -100,12 +104,13 @@ public class Login_StepDef {
 
     @Given("I click on {string} link")
     public void i_click_on_link(String string) {
-
+        dashboardPage.usersButton.click();
     }
 
     @Then("table should have following column names:")
-    public void table_should_have_following_column_names() {
-
+    public void table_should_have_following_column_names(List<String> expectedColumnNames) {
+        List<String> actualColumnNames = BrowserUtils.getElementsText(usersPage.columnNames);
+        Assert.assertEquals(actualColumnNames,expectedColumnNames);
     }
 
 

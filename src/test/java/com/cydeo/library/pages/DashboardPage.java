@@ -10,4 +10,7 @@ public class DashboardPage extends BasePage{
 
     @FindBy(id = "user_count")
     public WebElement userCount;
+
+    @FindBy(xpath = "//span[.='Users']")
+    public WebElement usersButton;
 }
