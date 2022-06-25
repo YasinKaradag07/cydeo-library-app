@@ -92,6 +92,22 @@ public class Login_StepDef {
         Assert.assertTrue(Integer.parseInt(userNumberText)==int1);
     }
 
+    @Given("I login as a librarian")
+    public void i_login_as_a_librarian() {
+        user_enters_librarian_username();
+        user_enters_librarian_password();
+    }
+
+    @Given("I click on {string} link")
+    public void i_click_on_link(String string) {
+
+    }
+
+    @Then("table should have following column names:")
+    public void table_should_have_following_column_names() {
+
+    }
+
 
 
 

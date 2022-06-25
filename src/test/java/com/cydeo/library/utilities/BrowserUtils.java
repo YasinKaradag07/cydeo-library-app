@@ -44,9 +44,7 @@ public class BrowserUtils {
         Assert.assertEquals(Driver.getDriver().getTitle(),expectedTitle);
     }
 
-    /*
-    Creating a utility method for ExplicitWait, so we don't have to repeat the lines
-     */
+   // Creating a utility method for ExplicitWait, so we don't have to repeat the lines
     public static void waitForInvisibilityOf(WebElement webElement){
         Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
@@ -251,7 +249,6 @@ public class BrowserUtils {
         }
     }
 
-
     /**
      * Verifies whether the element is displayed on page
      *
@@ -267,7 +264,6 @@ public class BrowserUtils {
 
         }
     }
-
 
     /**
      * Waits for element to be not stale
@@ -299,7 +295,6 @@ public class BrowserUtils {
         }
     }
 
-
     /**
      * Clicks on an element using JavaScript
      *
@@ -309,7 +304,6 @@ public class BrowserUtils {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
     }
-
 
     /**
      * Scrolls down to an element using JavaScript
@@ -405,7 +399,6 @@ public class BrowserUtils {
         jse.executeScript(command);
 
     }
-
 
     /**
      * This method will recover in case of exception after unsuccessful the click,
